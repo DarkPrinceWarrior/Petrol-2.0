@@ -4,8 +4,73 @@
 
 {% block content %}
 
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">Интеграция нашего проекта с chatGPT</h1>
+    <p class="lead">
+      Данный проект нацелен на активное использование chatGPT в нашей разработке по применению ИИ для нефтегазоносной отрасли
+    </p>
+    <div id="list-group" class="list-group w-auto">
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <p class="mb-0 opacity-75">This csv file has 8 columns: Aromaticity, Aliphaticity, Branching, Oxidation, sulfur content, density, viscosity, percentage of undiluted emulsion</p>
+          </div>
+        </div>
+      </a>
+       <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <p class="mb-0 opacity-75">Loading the dataset...</p>
+          </div>
+        </div>
+      </a>
+         <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <p class="mb-0 opacity-75">What is the optimal value of Aromaticity based on petroleum industry standards</p>
+          </div>
+        </div>
+      </a>
+         <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <p class="mb-0 opacity-75">According to your answer above, can you find me a row in a dataframe that is approaching this optimal value of Aromaticity</p>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+        <img src="https://digital-practice.ams3.cdn.digitaloceanspaces.com/static%2Fapp%2Fimg%2Fopenai-logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <p class="mb-0 opacity-75">Sure, I can create a row of optimal values for each column based on the guidelines I provided earlier. Note that the values are approximate and can vary depending on the specific product and application.
 
-<h2>hello, this is chatGPT page!</h2>
+Here is a row of optimal values for each column:
+
+Aromaticity: 30%
+Aliphaticity: 75%
+Branching: 15%
+Oxidation: 10 hours (gasoline), 15 hours (diesel fuel)
+Sulfur content: 10 ppm (gasoline and diesel fuel in Europe), 15 ppm (diesel fuel in the US)
+Density: 0.75 g/cm³ (gasoline), 0.80 g/cm³ (diesel fuel)
+Viscosity: 2.5 cSt (gasoline), 3.5 cSt (diesel fuel)
+Percentage of undiluted emulsion: 80%</p>
+          </div>
+        </div>
+      </a>
+     </div>
+
+     <div class="input-group mb-3">
+        <input type="text" class="form-control" id="chat-input">
+        <div class="input-group-append">
+          <button id="gpt-button" class="btn btn-primary">Ask ChatGPT</button>
+        </div>
+      </div>
+
+
+  </div>
+</main>
 
 
 {% endblock %}

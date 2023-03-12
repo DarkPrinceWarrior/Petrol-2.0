@@ -53,8 +53,9 @@ def model_prediction(buffer):
     y_pred_ensemble = ensamble_predictions([cat_boost_model, tab_net_model], [1, 1], X, (len(X), 8))
     # Поправить
     df_output = pd.DataFrame(data=scaler_Y.inverse_transform(y_pred_ensemble)).abs()
-    df_output.columns = ["Ароматичность(химия)","Алифатичность(химия)","Разветвленность(химия)","Окисленность(химия)"," содержание серы(химия)",
-              "плотность(химия)","вязкость(химия)","процент неразделяемой эмульсии(химия)"]
+    df_output.columns = ["Ароматичность(химия)", "Алифатичность(химия)", "Разветвленность(химия)",
+                         "Окисленность(химия)", " содержание серы(химия)",
+                         "плотность(химия)", "вязкость(химия)", "процент неразделяемой эмульсии(химия)"]
     return df_output
 
 
@@ -97,16 +98,17 @@ def contacts(request: Request):
 # Define the POST route
 @app.get('/chat', response_class=HTMLResponse)
 def chat(request: Request):
-    # Use the ChatGPT API to generate a response message
-    print(os.getenv("OPENAI_API_KEY"))
-    response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt="hello!",
-        max_tokens=1024,
-        n=1,
-        stop=None,
-        temperature=0.5
-    )
+    messages = [{"role": "system", "content":
+        "You are data analyst"}]
+
+    # response = openai.Completion.create(
+    #     engine="text-davinci-002",
+    #     prompt="hello!",
+    #     max_tokens=1024,
+    #     n=1,
+    #     stop=None,
+    #     temperature=0.5
+    # )
     return templates.TemplateResponse(name="chat_page.html", context={"request": request})
 
 # df_output = df.sample(frac=1).sample(n=5)

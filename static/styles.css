@@ -1,6 +1,12 @@
 h1 {
     color: green;
 }
+
+p {
+    font-size: 20px;
+}
+
+
 .logo {
     background: left / cover url('/static/images/petrol.jpg');
     display: flex;
